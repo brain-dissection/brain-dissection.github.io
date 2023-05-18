@@ -931,16 +931,16 @@
             <!-- paper container -->
             <div class="w3-display-container w3-row w3-white w3-margin-bottom">
                 <div class="w3-center">
-                    <h1>Brain Dissection: fMRI-trained Networks Reveal Spatial Selectivity in the Processing of Natural Images</h1>
+                    <h2>Brain Dissection: fMRI-trained Networks Reveal Spatial Selectivity in the Processing of Natural Images</h2>
                     <h5><a href="https://www.gabesarch.me">Gabriel Sarch</a> &emsp;&emsp; <a
                             href="https://sites.google.com/andrew.cmu.edu/tarrlab/people/michael-j-tarr">Michael Tarr<sup>*</sup></a> &emsp;&emsp; <a
                             href="https://www.cs.cmu.edu/~lwehbe/">Leila Wehbe<sup>*</sup></a> &emsp;&emsp; <a
                             href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki<sup>*</sup></a></h5>
                     <div class="w3-center">
-                        <h6>Carnegie Mellon University</h6>
+                        <h5>Carnegie Mellon University</h5>
                     </div>
                     <div class="w3-center">
-                        <h8><sup>*</sup>Equal</h8>
+                        <sup>*</sup>Equal
                     </div>
                 </div>
 
@@ -950,7 +950,7 @@
                                 class="material-symbols-rounded">
                                 description
                             </span><span>Paper</span></a>
-                        <a href="https://github.com/Gabesarch/brain-dissectiopn" target="_blank"><span
+                        <a href="https://github.com/Gabesarch/brain-dissection" target="_blank"><span
                                 class="material-symbols-rounded">
                                 code
                             </span><span>Code</span></a>
@@ -1011,7 +1011,13 @@
                     <br>
                     <spacer type="horizontal" width="100" height="50"> </spacer>
                     <br>
-                    <p align="justify">FILL IN</p>
+                    <p align="justify"><b>A. fMRI Response-Optimized Training Procedure.</b> All voxels in an ROI share a convolutional backbone.
+                    Each voxel is assigned a set of learnable spatial and feature weights. The voxel weights are applied to the output
+                    features of the backbone network to predict the voxel response for an input image. Training minimizes the mean squared
+                    error between the predicted and actual voxel response of NSD images. <b>B. Dissection Procedure.</b> For each
+                    voxel in an ROI and test image, we obtain the voxel's selectivity binary mask by applying the voxel's feature weights to
+                    the output of the ROI-specific backbone and thresholding the resultant feature map. We examine the overlapping region
+                    between the mask and a measurement of interest (e.g., depth map).</p>
                 </div>
                 <hr>
 
