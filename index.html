@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brain Dissection: fMRI-trained Networks Reveal Spatial Selectivity in the Processing of Natural Images</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        }
+
+        < !-- .cite {
+            background: #f0f0f0;
+            padding: 10px;
+            font-size: 18px
+        }
+
+        -->.cite {
+            padding: 0px;
+            background: #ffffff;
+            font-size: 18px
+        }
+
+        .card {
+            border: 1px solid #ccc
+        }
+
+        img {
+            margin-bottom: -6px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2196F3;
+        }
+
+        .layered-paper-big {
+            /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The top layer shadow */
+                5px 5px 0 0px #fff,
+                /* The second layer */
+                5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The second layer shadow */
+                10px 10px 0 0px #fff,
+                /* The third layer */
+                10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The third layer shadow */
+                15px 15px 0 0px #fff,
+                /* The fourth layer */
+                15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The fourth layer shadow */
+                20px 20px 0 0px #fff,
+                /* The fifth layer */
+                20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+                /* The fifth layer shadow */
+                25px 25px 0 0px #fff,
+                /* The fifth layer */
+                25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+            /* The fifth layer shadow */
+            margin-left: 10px;
+            margin-right: 60px;
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWTD5V0L2H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZWTD5V0L2H');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="description" content="TIDEE: Tidying Up Novel Rooms using Visuo-Semantic Commonsense Priors">
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#f5ece5">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#276FBF">
+    <meta name="msapplication-TileColor" content="#276FBF">
+    <link rel="stylesheet" href="/fonts.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-intersection@0.2.0/dist/js/splide-extension-intersection.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css">
+    <style>
+        .material-symbols-rounded {
+            font-variation-settings: 'FILL'1,
+                'wght'400,
+                'GRAD'0,
+                'opsz'48
+        }
+
+
+        @font-face {
+            font-family: 'Code';
+            src: url('/fonts/IBMPlexMono-Light.ttf');
+        }
+
+        .tooltip-inner {
+            font-family: 'GT Ultra', sans-serif !important;
+        }
+
+
+        h3 span i,
+        h5 span i {
+            order: -1;
+        }
+
+        body {
+            position: relative;
+        }
+
+        html,
+        body {
+            font-family: 'GT Ultra', sans-serif !important;
+            font-weight: 200;
+            font-size: 18px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            color: #1f1e1d;
+            background-color: #f5ece5;
+
+            /*     background-color: #1f1e1d;*/
+            /*color: #f5e4d7;*/
+            /*font-family: sans-serif;*/
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        a {
+            color: #276FBF !important;
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #184477 !important;
+            /*font-weight: 700;*/
+        }
+
+        /* Heart beat animation */
+
+
+        .heart:hover div * {
+            color: #B33951 !important;
+            cursor: initial !important;
+        }
+
+        .figure_tidee {
+            /* max-width: 100%; 
+        max-height: auto;  */
+            width: 100%;
+            height: auto;
+        }
+
+        .authors {
+            display: flex;
+            justify-content: center;
+            max-width: 760px;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            font-size: 1.1em;
+        }
+
+        .autoplaytoggle {
+            margin: -1rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .autoplaytoggle button {
+            align-items: center;
+        }
+
+        .autoplaytoggle span.material-symbols-rounded {
+
+            font-size: 1.25rem !important;
+        }
+
+        .insts {
+            display: flex;
+            justify-content: center;
+        }
+
+        header h1 {
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+        }
+
+        .insts {
+            font-size: 17px;
+        }
+
+        .linkscontainer {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .links {
+            /*font-size: 5rem;*/
+            /*margin: 0 -20px;*/
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .links a span.material-symbols-rounded {
+            max-width: 25px;
+        }
+
+        span.material-symbols-rounded {
+            max-width: 25px;
+        }
+
+        .links a {
+            display: inline-flex;
+            /*flex-direction: column;*/
+            align-items: center;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 5px 7px;
+            color: #f6f3f1 !important;
+            font-family: 'GT Ultra', sans-serif !important;
+            font-weight: 400;
+            /*margin: 0 10px;*/
+            transition: transform .2s;
+            background-color: rgba(var(--btn-bgc), 1);
+        }
+
+
+        .links a:nth-child(1) {
+            --btn-bgc: 237, 100, 90;
+        }
+
+        .links a:hover {
+            transform: scale(1.2);
+            color: #f6f3f1 !important;
+        }
+
+        .links a:active {
+            transform: scale(1.3);
+        }
+
+        .links a:nth-child(2) {
+            --btn-bgc: 47, 138, 196;
+        }
+
+        .links a:nth-child(3) {
+            --btn-bgc: 229, 134, 6;
+        }
+
+        .links a:nth-child(4) {
+            --btn-bgc: 133, 180, 51;
+        }
+
+        .links a:nth-child(5) {
+            --btn-bgc: 204, 97, 176;
+        }
+
+        .links a span.material-symbols-rounded {
+            margin-right: .25rem;
+        }
+
+        .links a:not(:last-child) {
+            /*margin-right: 20px;*/
+        }
+
+
+        .links .material-symbols-rounded {
+            font-size: 1.25rem;
+        }
+
+
+        .links i {
+            font-size: 28px;
+        }
+
+        .fig {
+            width: 100%;
+            display: block;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+
+        img.arch {
+            max-width: 500px;
+        }
+
+        img.blobs {
+            max-width: 350px;
+        }
+
+        .teaser {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .teaser+section {
+            margin-top: 1rem;
+        }
+
+        .teaser video {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        img.teaser {
+            max-width: 90%;
+        }
+
+        .abstract-imgs .col {
+            display: flex;
+            align-items: center;
+        }
+
+        .videowrapper {
+            float: none;
+            clear: both;
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+        }
+
+        .wrapwrap {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .videowrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .abstract-capt {
+            font-size: 0.8rem;
+            display: block !important;
+            text-align: center;
+        }
+
+        .latex {
+            display: inline;
+            font-family: 'Math', monospace;
+            font-style: italic;
+        }
+
+        p {
+            margin: 0 !important;
+        }
+
+        .bs-tooltip-end {
+            margin-left: 3px !important;
+        }
+
+        section {
+            margin: 2rem 0;
+        }
+
+        section h5 {
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .iconbutton {
+            padding: 0.1rem 0.3rem;
+            display: flex;
+            border: none !important;
+            background-color: #4B495B !important;
+            color: #f5ece5 !important;
+            font-family: 'GT Ultra', sans-serif !important;
+            font-weight: 400;
+            text-decoration: none !important;
+        }
+
+        .iconbutton span.material-symbols-rounded {
+            font-size: 1.5rem;
+            /* font-weight: 700; */
+        }
+
+        .playpause span.material-symbols-rounded {
+            font-variation-settings: 'wght'700;
+
+
+        }
+
+        .iconbutton span.material-symbols-rounded:hover {
+            color: #faf6f2 !important;
+        }
+
+        .iconbutton:hover,
+        .iconbutton:focus {
+            background-color: #2E2E38 !important;
+            border-color: none !important;
+            color: #faf6f2 !important;
+        }
+
+        .iconbutton:focus {}
+
+        .iconbutton:active {
+            background-color: #09090B !important;
+
+        }
+
+        [data-clipboard-target] {
+            cursor: pointer;
+        }
+
+        [data-clipboard-target]:hover {
+            color: #276FBF !important;
+        }
+
+        /* .emptyrooms {
+         max-width: 80%;
+     }*/
+
+        .emptyrooms {
+            display: flex;
+            /*justify-content: center;*/
+            align-items: flex-start;
+            background-color: #f5ece5;
+        }
+
+        .playpause {
+            flex-shrink: 0;
+        }
+
+        .emptyrooms img:first-child {
+            width: 16.196944%;
+            margin-right: 0.6%;
+        }
+
+        .emptyrooms img:last-child {
+            width: 82.8862479%;
+        }
+
+
+        section h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        section h5,
+        section h3 {
+            justify-content: space-between;
+
+            display: flex;
+            align-items: center;
+        }
+
+        h3,
+        h5 {
+            scroll-margin-top: 25px;
+            /*display: inline-block;*/
+        }
+
+        h3[data-exclude-link],
+        h5[data-exclude-link] {
+            cursor: initial;
+        }
+
+        h3 span,
+        h5 span {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        h3 span:hover,
+        h5 span:hover {
+
+            color: #276FBF !important;
+        }
+
+        /*
+            h3[data-exclude-link]:hover, h5[data-exclude-link]:hover {
+                color: initial !important;
+            }*/
+
+        .carousel {
+            margin: 1rem 0;
+        }
+
+        .ltx {
+            vertical-align: baseline;
+        }
+
+        .cit {
+            background-color: rgba(26, 25, 31, 0.05);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: inline-block;
+            margin: 0 auto;
+            overflow-y: hidden;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Code', monospace;
+        }
+
+        .cit_cont {
+            display: flex;
+        }
+
+        .video-container {
+            position: relative;
+        }
+
+        /* .video-container .video-border {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         box-shadow: inset 0px 0px 0px 6px #f5ece5;
+     }*/
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            clip-path: inset(5px 5px);
+        }
+
+        .video-container img {
+            width: 100%;
+        }
+
+        .splide>* {
+            font-weight: 500;
+            position: initial;
+        }
+
+        .splide__arrow {
+            position: initial;
+            background: none;
+            /*opacity: 1;*/
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+            font-size: 1.25rem;
+            justify-content: end;
+            width: 1.5em;
+        }
+
+        .splide__arrow--prev {
+            justify-content: left;
+        }
+
+        .splide__slide {
+            height: 0;
+        }
+
+        .splide__slide.is-visible {
+            height: auto;
+        }
+
+        .move-cont {
+            display: flex;
+        }
+
+        .move-cont>video {
+            max-width: 100%;
+        }
+
+        .splide__pagination__page.is-active {
+            background: #000;
+        }
+
+        .splide__pagination__page {
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .splide__pagination {
+            margin-top: 0.25rem;
+        }
+
+        .splide__pagination__page:hover {
+            background: #aaa;
+            transform: scale(1.2);
+        }
+
+        .splide__track_and_arrows {
+            display: flex;
+        }
+
+        .splide__arrows {
+            display: flex;
+            align-items: center;
+        }
+
+        .styletransfer {
+            display: grid;
+            grid-row-gap: .5rem;
+            grid-template-columns: 1fr 20px 1fr 1fr 1fr 20px 1fr 1fr 1fr;
+        }
+
+        .inversion {
+            display: grid;
+            /*grid-row-gap: .5rem;*/
+            /*grid-template-columns: 1fr 20px 1fr 1fr 1fr 20px 1fr 1fr 1fr;*/
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .styletransfer img {
+            max-width: 100%;
+            clip-path: inset(2px 2px);
+        }
+
+        .inversion span {
+            text-align: center;
+        }
+
+        .inversion img {
+            max-width: 100%;
+            clip-path: inset(2px 2px);
+        }
+
+
+        #inversion~.splide img {
+            max-width: 100%;
+            padding: 0.3rem;
+        }
+
+        .styletransfer span {
+            text-align: center;
+        }
+
+        .styletransfer span:nth-child(2) {
+            grid-column-start: 3;
+            grid-column-end: 6;
+        }
+
+        .styletransfer span:nth-child(3) {
+            grid-column-start: 7;
+            grid-column-end: 10;
+        }
+
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 1050px;
+            }
+        }
+
+        .inversion_subheader {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .inversion_subheader:not(:first-of-type) {
+            margin-top: 0.2rem;
+        }
+
+        .inversion_subheader+.splide {
+            margin: 0.2rem 0 !important;
+        }
+
+        /*
+            .move-cont .video-container:nth-child(8), .move-cont .video-container:nth-child(7) {
+                display: none;
+            }*/
+
+        @media (max-width: 991px) {
+
+            /*
+                    .move-cont .video-container:nth-child(5), .move-cont .video-container:nth-child(6) {
+                        display: none;
+                    }*/
+            .move-cont>video {
+                max-width: 150%;
+                clip-path: inset(0 33.333333% 0 0);
+            }
+
+            header h3 {
+                font-size: 1.5rem;
+            }
+
+            .cit {
+                /*font-size: 12px !important;*/
+            }
+
+            .emptyrooms img:last-child {
+                width: 99.6% !important;
+            }
+
+            .emptyrooms img:first-child {
+                width: 19.46% !important;
+                margin-right: 0.7522% !important;
+            }
+
+            .styletransfer {
+                display: grid;
+                grid-template-columns: 1fr 15px 1fr 1fr 15px 1fr 1fr !important;
+            }
+
+            .styletransfer img:nth-child(9n+3),
+            .styletransfer img:nth-child(9n-1) {
+                display: none;
+            }
+
+            .styletransfer span:nth-child(2) {
+                grid-column-start: 3;
+                grid-column-end: 5;
+            }
+
+            .styletransfer span:nth-child(3) {
+                grid-column-start: 6;
+                grid-column-end: 8;
+            }
+        }
+
+        .author {
+            padding: 0 0.6rem;
+        }
+
+        @media (max-width: 767px) {
+
+            html,
+            body {
+
+                /*font-size: 16px;*/
+            }
+
+            .author {
+                font-size: 18px;
+            }
+
+            .insts {
+                font-size: 16px;
+            }
+
+            /*.move-cont .video-container:nth-child(4) {
+            display: none;
+        }*/
+            .move-cont>video {
+                max-width: 200%;
+                clip-path: inset(0 50% 0 0);
+            }
+
+            .inversion *:nth-child(5n+2) {
+                display: none;
+            }
+
+            .inversion {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+            .emptyrooms img:last-child {
+                width: 124.477307% !important;
+            }
+
+            .emptyrooms img:first-child {
+                width: 24.3243243% !important;
+                margin-right: 0.9% !important;
+            }
+
+            .styletransfer {
+                display: grid;
+                grid-template-columns: 1fr 10px 1fr 10px 1fr !important;
+            }
+
+            .styletransfer img:nth-child(9n+2),
+            .styletransfer img:nth-child(9n-2) {
+                display: none;
+            }
+
+            .styletransfer span:nth-child(2) {
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+
+            .styletransfer span:nth-child(3) {
+                grid-column-start: 5;
+                grid-column-end: 6;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .links a span.material-symbols-rounded {
+                max-width: 20px;
+            }
+
+            .links {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 510px) {
+
+            /*
+                    .move-cont .video-container:nth-child(3) {
+                        display: none;
+                    }*/
+            .move-cont>video {
+                max-width: 300%;
+                clip-path: inset(0 66.6666666% 0 0);
+            }
+
+
+            .inversion {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .inversion span:nth-child(n+4) {
+                grid-row: 3;
+            }
+
+            .links .material-symbols-rounded {
+                /*display: none;*/
+                font-size: 1rem;
+            }
+
+            .links a span.material-symbols-rounded {
+                max-width: 18px;
+            }
+
+        }
+
+        @media (max-width: 399px) {}
+
+        @media (max-width: 380px) {
+            /*.links .material-symbols-rounded {*/
+            /*    display: none;*/
+            /*    padding: 5px 10px;*/
+            /*    !*font-size: 1rem;*!*/
+            /*}*/
+        }
+
+        @media (max-width: 575px) {
+
+            img.blobs {
+                max-width: 300px;
+            }
+
+            .emptyrooms img:last-child {
+                width: 165.941536% !important;
+            }
+
+            .emptyrooms img:first-child {
+                width: 32.4269205% !important;
+                margin-right: 1.15% !important;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .abstract-imgs .col-md-7 {
+                border-right: 1px solid #1f1e1d;
+            }
+
+            img.arch,
+            img.blobs {
+                max-width: 600px;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="w3-white">
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
+
+        <!-- The Grid -->
+        <div class="w3-row-padding">
+
+            <!-- paper container -->
+            <div class="w3-display-container w3-row w3-white w3-margin-bottom">
+                <div class="w3-center">
+                    <h1>TIDEE: Tidying Up Novel Rooms using Visuo-Semantic Commonsense Priors</h1>
+                    <h5><a href="https://www.gabesarch.me">Gabriel Sarch</a> &emsp;&emsp; <a
+                            href="https://sites.google.com/andrew.cmu.edu/tarrlab/people/michael-j-tarr">Michael Tarr</a> &emsp;&emsp; <a
+                            href="https://cs.cmu.edu/~aharley/">Leila Wehbe</a> &emsp;&emsp; <a
+                            href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a></h5>
+                </div>
+
+                <div class="linkscontainer">
+                    <div class="links mt-4">
+                        <a href="" target="_blank"><span
+                                class="material-symbols-rounded">
+                                description
+                            </span><span>Paper</span></a>
+                        <a href="https://github.com/Gabesarch/brain-dissectiopn" target="_blank"><span
+                                class="material-symbols-rounded">
+                                code
+                            </span><span>Code</span></a>
+                        <!-- <a href="https://github.com/Gabesarch/TIDEE#tidy-task" target="_blank"><span
+                                class="material-symbols-rounded">
+                                sports_esports
+                            </span><span>Dataset</span></a> -->
+                        <!-- <a href="#results"><span class="material-symbols-rounded">
+        science
+        </span><span>Results</span></a> -->
+
+                        <a href="#citation"><span class="material-symbols-rounded">
+                                format_quote
+                            </span><span>Cite</span></a>
+                    </div>
+                </div>
+
+                <br>
+                <spacer type="horizontal" width="5" height="5"> </spacer>
+                <br>
+
+                <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
+                    <img src="images/Example_each_room_fast.gif" style="width:100%">
+                </div>
+                <hr>
+                <div class="w3-center">
+                    <h2>Abstract</h2>
+                </div>
+                <p align="justify">The alignment between deep neural network (DNN) features and cortical responses currently provides the most accurate
+                quantitative explanation for higher visual areas. At
+                the same time, these model features have been critiqued as uninterpretable explanations, trading one black box (the
+                human brain) for another (a neural network). In this paper, we train networks to directly predict, from scratch, brain
+                responses to images from a large-scale dataset of natural scenes. We then employ ``network dissection'', 
+                a method used for enhancing neural network interpretability by identifying and localizing the
+                most significant features in images for individual units of a trained network, and which has been used to study category
+                selectivity in the human brain. We adapt this approach to create a hypothesis-neutral model that is
+                then used to explore the tuning properties of specific visual regions beyond category selectivity, which we call ``brain
+                dissection''.</p>
+                <br>
+                <spacer type="horizontal" width="5" height="5"> </spacer>
+                <br>
+                <p align="justify">We use brain dissection to examine a range of ecologically important, intermediate properties, including
+                depth, surface normals, curvature, and object relations and find consistent feature selectivity differences across
+                sub-regions of the parietal, lateral, and ventral visual streams. For example, in the three scene-selective network we
+                find that RSC prefers far depths and in-plane horizontal surface normals, while OPA and PPA prefer near and mid depths
+                and vertical surface normals, indicating a change in the spatial coordinate system used for scene representations across
+                RSC and OPA/PPA. Such findings contribute to a deeper, more fine-grained understanding of the functional characteristics
+                of human visual cortex when viewing natural scenes.</p>
+                <hr>
+
+                </section>
+
+
+                <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
+                    <h2>How does brain dissection work?</h2>
+                    <img src="images/Figure1_full_V7.png" style="width:100%">
+                    <p> </p>
+                    <br>
+                    <spacer type="horizontal" width="100" height="50"> </spacer>
+                    <br>
+                    <p align="justify">FILL IN</p>
+                </div>
+                <hr>
+
+                <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
+                    <h2>Results</h2>
+                    <p align="justify">FILL IN</p>
+                    <!-- <div class="figure_tidee"> -->
+                    <img src="images/Table1.png" style="width:480px">
+                    <!-- </div> -->
+                    <p align="justify">FILL IN</p>
+                    <!-- <img src="images/Table2.png" style="width:720px"> -->
+                    <!-- <p align="left">We have submitted our model to the rearrangement leaderboad here:</p>
+                    <a href="https://leaderboard.allenai.org/ithor_rearrangement_2phase_2022/submissions/public"
+                        target="_blank"><img src="images/2-phase-leaderboard-icon-236586e13446709fbffdf8e892c3e78f.svg"
+                            alt="AI2 Leaderboard" style="width:540px"></a> -->
+                    <br>
+                    <spacer type="horizontal" width="100" height="50"> </spacer>
+                    <br>
+
+                </div>
+                <hr>
+
+                <section id="citation">
+                    <h3 data-exclude-link="true"><span style="display: inline-flex;
+            align-items: center;" data-bs-toggle="tooltip" data-bs-placement="right" title="Copy BibTex"
+                            data-clipboard-target=".cit"><span class="me-1 material-symbols-rounded">
+                                content_copy
+                            </span>Citation</span>
+                        <div>
+                            <a href="images/tidee_paper.pdf" target="_blank"
+                                class="btn px-2 py-1 iconbutton btn-dark"><span class="me-1 material-symbols-rounded">
+                                    file_download
+                                </span> Paper PDF</a>
+
+                        </div>
+                    </h3>
+                    <div class="cit_cont">
+                        <pre style="background-color:#F5F5F5;"><code><font size="-1">@inproceedings{sarch2023braindissect,
+            title = "TIDEE: Tidying Up Novel Rooms using Visuo-Semantic Commonsense Priors",
+            author = "Sarch, Gabriel H. and Tarr, Michael J. and Wehbe, Leila and Fragkiadaki, Katerina", 
+            booktitle = "bioRxiv",
+            year = "2023"}</font></code></pre>
+                    </div>
+                </section>
+                <hr>
+
+                <!-- end paper container -->
+
+            </div><!-- End Grid -->
+        </div><!-- End Page Container -->
+
+</body>
+
+</html>
