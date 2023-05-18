@@ -1011,13 +1011,8 @@
                     <br>
                     <spacer type="horizontal" width="100" height="50"> </spacer>
                     <br>
-                    <p align="justify"><b>A. fMRI Response-Optimized Training Procedure.</b> All voxels in an ROI share a convolutional backbone.
-                    Each voxel is assigned a set of learnable spatial and feature weights. The voxel weights are applied to the output
-                    features of the backbone network to predict the voxel response for an input image. Training minimizes the mean squared
-                    error between the predicted and actual voxel response of NSD images. <b>B. Dissection Procedure.</b> For each
-                    voxel in an ROI and test image, we obtain the voxel's selectivity binary mask by applying the voxel's feature weights to
-                    the output of the ROI-specific backbone and thresholding the resultant feature map. We examine the overlapping region
-                    between the mask and a measurement of interest (e.g., depth map).</p>
+                    <p align="justify"><b>A. fMRI Response-Optimized Training Procedure.</b> All voxels in an ROI share a convolutional backbone. Each voxel is assigned a set of learnable spatial and feature weights. The voxel weights are applied to the output features of the backbone network to predict the voxel response for an input image. Training minimizes the mean squared error between the predicted and actual voxel response of NSD images.</p>
+                    <p align="justify"><b>B. Dissection Procedure.</b> For each voxel in an ROI and test image, we obtain the voxel's selectivity binary mask by applying the voxel's feature weights to the output of the ROI-specific backbone and thresholding the resultant feature map. We examine the overlapping region between the mask and a measurement of interest (e.g., depth map).</p>
                 </div>
                 <hr>
 
