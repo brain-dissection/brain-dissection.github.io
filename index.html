@@ -954,11 +954,11 @@
         }
     </style>
 
-    <style>
+    <!-- <style>
         img {
             margin: 20px;
         }
-    </style>
+    </style> -->
 </head>
 
 <body class="w3-white">
@@ -1201,7 +1201,7 @@
         // var scale_width = 512 / img.clientWidth;
         // var scale_height = 512 / img.clientHeight;
         var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
-        var xcoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (1124 / img.clientWidth)), 1124 - 1));
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
 
         var data = array[ycoord_adjusted][xcoord_adjusted]
 
