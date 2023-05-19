@@ -1172,7 +1172,7 @@
 <!-- Taken from view-source:https://developer.mozilla.org/en-US/docs/Web/CSS/CSSOM_View/Coordinate_systems#example -->
 <!-- <script src="data/median_abs_depths_subject1.js"></script> -->
 <script type="module">
-    import array from './data/test.js'
+    import { array } from './data/test.js'
     let inner = document.querySelector(".inner");
     let log = document.querySelector(".log");
 
@@ -1186,6 +1186,14 @@
         var xcoord = e[idX];
         var ycoord = e[idY];
 
+        // var array = [
+        //     ['Work', 9],
+        //     ['Eat', 1],
+        //     ['Commute', 2],
+        //     ['Play Game', 1],
+        //     ['Sleep', 7]
+        // ];
+
         var data = array[0][0]
 
         // document.getElementById(idX).innerText = e[idX];
@@ -1196,9 +1204,9 @@
 
     function update(e) {
         setCoords(e, "offset");
-        setCoords(e, "client");
-        setCoords(e, "page");
-        setCoords(e, "screen");
+        // setCoords(e, "client");
+        // setCoords(e, "page");
+        // setCoords(e, "screen");
     }
 
     inner.addEventListener("mouseenter", update, false);
