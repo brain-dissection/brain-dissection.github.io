@@ -1,4 +1,4 @@
-export const array = [
+export default array = [
     ['Work', 9],
     ['Eat', 1],
     ['Commute', 2],
