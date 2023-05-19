@@ -930,9 +930,9 @@
         position: relative;
         /* width: 500px;
         height: 300px; */
-        width: 1124px;
-        height: 512px;
-        /* width: 100%; */
+        /* width: 1124px;
+        height: 512px; */
+        width: 100%;
         /* height: 300px; */
         text-align: center;
         /* top: 25px;
@@ -1066,7 +1066,8 @@
 
                 <!-- <div class="outer"> -->
                 <div class="inner">
-                    <img src="images/median_abs_depths_subject1.png" style="width:100%">
+                    <!-- <img src="images/median_abs_depths_subject1.png" style="width:100%" id="brain_image1"> -->
+                    <img src="images/median_abs_depths_subject1.png" id="brain_image1">
                 </div>
                 <div class="log">
                     <p>
@@ -1114,8 +1115,8 @@
                     <br>
                     <spacer type="horizontal" width="100" height="50"> </spacer>
                     <br>
-                    <p align="justify"><b>A. fMRI Response-Optimized Training Procedure.</b> All voxels in an ROI share a convolutional backbone. Each voxel is assigned a set of learnable spatial and feature weights. The voxel weights are applied to the output features of the backbone network to predict the voxel response for an input image. Training minimizes the mean squared error between the predicted and actual voxel response of NSD images.</p>
-                    <p align="justify"><b>B. Dissection Procedure.</b> For each voxel in an ROI and test image, we obtain the voxel's selectivity binary mask by applying the voxel's feature weights to the output of the ROI-specific backbone and thresholding the resultant feature map. We examine the overlapping region between the mask and a measurement of interest (e.g., depth map).</p>
+                    <!-- <p align="justify"><b>A. fMRI Response-Optimized Training Procedure.</b> All voxels in an ROI share a convolutional backbone. Each voxel is assigned a set of learnable spatial and feature weights. The voxel weights are applied to the output features of the backbone network to predict the voxel response for an input image. Training minimizes the mean squared error between the predicted and actual voxel response of NSD images.</p>
+                    <p align="justify"><b>B. Dissection Procedure.</b> For each voxel in an ROI and test image, we obtain the voxel's selectivity binary mask by applying the voxel's feature weights to the output of the ROI-specific backbone and thresholding the resultant feature map. We examine the overlapping region between the mask and a measurement of interest (e.g., depth map).</p> -->
                 </div>
                 <hr>
 
@@ -1193,8 +1194,16 @@
         //     ['Play Game', 1],
         //     ['Sleep', 7]
         // ];
+        var img = document.getElementById('brain_image1');
+        //or however you get a handle to the IMG
+        // var width = img.clientWidth;
+        // var height = img.clientHeight;
+        // var scale_width = 512 / img.clientWidth;
+        // var scale_height = 512 / img.clientHeight;
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (1124 / img.clientWidth)), 1124 - 1));
 
-        var data = array[ycoord][xcoord]
+        var data = array[ycoord_adjusted][xcoord_adjusted]
 
         // document.getElementById(idX).innerText = e[idX];
         // document.getElementById(idY).innerText = e[idY];
