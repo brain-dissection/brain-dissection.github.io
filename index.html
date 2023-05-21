@@ -669,6 +669,70 @@
         }
 </script>
 
+<!-- CATEGORY -->
+<script type="module">
+    // import { array } from './data/median_abs_depths_subject1.js'
+    const array_map = new Map();
+    import { array1 } from './data/median_abs_depths_subject1.js';
+    array_map.set('median_abs_depths_subject1', array1);
+    import { array2 } from './data/median_abs_depths_subject2.js';
+    array_map.set('median_abs_depths_subject2', array2);
+
+    let inner = document.querySelector(".inner");
+    let log = document.querySelector(".log");
+
+    // import { array1 } from 'data/median_abs_depths_subject1.js'
+
+    function setCoords(e, type) {
+
+        const idX = `${type}X`;
+        const idY = `${type}Y`;
+
+        var xcoord = e[idX];
+        var ycoord = e[idY];
+
+        var img = document.getElementById('expandedImg');
+        let array = array_map.get(img.alt);
+        //or however you get a handle to the IMG
+        // var width = img.clientWidth;
+        // var height = img.clientHeight;
+        // var scale_width = 512 / img.clientWidth;
+        // var scale_height = 512 / img.clientHeight;
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+
+        var data = array[ycoord_adjusted][xcoord_adjusted]
+
+        // document.getElementById(idX).innerText = e[idX];
+        // document.getElementById(idY).innerText = e[idY];
+        var data = Math.round(data * 1000) / 1000;
+        document.getElementById(idX).innerText = data;
+        // document.getElementById(idY).innerText = ycoord;
+    }
+
+    function update(e) {
+        setCoords(e, "offset");
+        // setCoords(e, "client");
+        // setCoords(e, "page");
+        // setCoords(e, "screen");
+    }
+
+    inner.addEventListener("mouseenter", update, false);
+    inner.addEventListener("mousemove", update, false);
+    inner.addEventListener("mouseleave", update, false);
+
+</script>
+<script>
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        // var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        expandImg.alt = imgs.alt;
+        // imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
 </body>
 
 </html>
