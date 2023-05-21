@@ -130,6 +130,7 @@
         text-align: center;
         }
     </style>
+    
 
     <style>
         .project-links {
@@ -608,11 +609,11 @@
 <!-- ABSOLUTE DEPTH -->
 <script type="module">
     // import { array } from './data/median_abs_depths_subject1.js'
-    const array_map = new Map();
-    import { array1 } from './data/median_abs_depths_subject1.js';
-    array_map.set('median_abs_depths_subject1', array1);
-    import { array2 } from './data/median_abs_depths_subject2.js';
-    array_map.set('median_abs_depths_subject2', array2);
+    const array_map_abs_depth = new Map();
+    import { array_absdepth_subj1 } from './data/median_abs_depths_subject1.js';
+    array_map_abs_depth.set('median_abs_depths_subject1', array_absdepth_subj1);
+    import { array_absdepth_subj2 } from './data/median_abs_depths_subject2.js';
+    array_map_abs_depth.set('median_abs_depths_subject2', array_absdepth_subj2);
     
     let inner = document.querySelector(".inner");
     let log = document.querySelector(".log");
@@ -628,7 +629,7 @@
         var ycoord = e[idY];
 
         var img = document.getElementById('expandedImg');
-        let array = array_map.get(img.alt);
+        let array = array_map_abs_depth.get(img.alt);
         //or however you get a handle to the IMG
         // var width = img.clientWidth;
         // var height = img.clientHeight;
@@ -672,11 +673,11 @@
 <!-- CATEGORY -->
 <script type="module">
     // import { array } from './data/median_abs_depths_subject1.js'
-    const array_map = new Map();
-    import { array1 } from './data/median_abs_depths_subject1.js';
-    array_map.set('median_abs_depths_subject1', array1);
-    import { array2 } from './data/median_abs_depths_subject2.js';
-    array_map.set('median_abs_depths_subject2', array2);
+    const array_map_category = new Map();
+    import { array_category_subj1 } from './data/best_cat_per_unit_subject1.js';
+    array_map_category.set('best_cat_per_unit_subject1', array_category_subj1);
+    // import { array2 } from './data/median_abs_depths_subject2.js';
+    // array_map_category.set('median_abs_depths_subject2', array2);
 
     let inner = document.querySelector(".inner");
     let log = document.querySelector(".log");
