@@ -531,7 +531,7 @@
                     <div class="column">
                         <div class="parentContainer">
                             <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%"
-                                id="depth1">
+                                id="depth5">
                             <!-- <div class="text-block">
                                             <h4>Subject 1</h4>
                                         </div> -->
@@ -542,21 +542,21 @@
                     <div class="column">
                         <div class="parentContainer">
                             <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject2" onclick="myFunction(this);" style="width:100%"
-                                id="depth2">
+                                id="depth6">
                             <div class="centered">Subject 6</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
                             <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);"
-                                style="width:100%" id="depth3">
+                                style="width:100%" id="depth7">
                             <div class="centered">Subject 7</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
                             <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%"
-                                id="depth4">
+                                id="depth8">
                             <div class="centered">Subject 8</div>
                         </div>
                     </div>
@@ -567,6 +567,95 @@
                 <spacer type="horizontal" width="5" height="5"> </spacer>
                 <br> -->
 
+                <div class="inner">
+                    <!-- <img src="images/median_abs_depths_subject1.png" id="brain_image1" style="width:100%"> -->
+                    <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+                    <img id="expandedImg" style="width:100%">
+                    <!-- <div id="imgtext"></div> -->
+                </div>
+                <div class="log">
+                    <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
+                    <p>
+                        Depth: <span id="offsetX">N/A</span> meters
+                    </p>
+                </div>
+
+                <h3>PLACES365 Category</h3>
+                <!-- The grid: four columns -->
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat1">
+                            <!-- <div class="text-block">
+                                            <h4>Subject 1</h4>
+                                        </div> -->
+                            <div class="centered">Subject 1</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat2">
+                            <div class="centered">Subject 2</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat3">
+                            <div class="centered">Subject 3</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat4">
+                            <div class="centered">Subject 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat5">
+                            <!-- <div class="text-block">
+                                                            <h4>Subject 1</h4>
+                                                        </div> -->
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat6">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat7">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction(this);" style="width:100%" id="cat8">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- <br>
+                                <spacer type="horizontal" width="5" height="5"> </spacer>
+                                <br> -->
+                
                 <div class="inner">
                     <!-- <img src="images/median_abs_depths_subject1.png" id="brain_image1" style="width:100%"> -->
                     <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
@@ -706,7 +795,7 @@
 
         // document.getElementById(idX).innerText = e[idX];
         // document.getElementById(idY).innerText = e[idY];
-        var data = Math.round(data * 1000) / 1000;
+        // var data = Math.round(data * 1000) / 1000;
         document.getElementById(idX).innerText = data;
         // document.getElementById(idY).innerText = ycoord;
     }
