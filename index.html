@@ -413,10 +413,10 @@
                 quantitative explanation for higher visual areas. At
                 the same time, these model features have been critiqued as uninterpretable explanations, trading one black box (the
                 human brain) for another (a neural network). In this paper, we train networks to directly predict, from scratch, brain
-                responses to images from a large-scale dataset of natural scenes. We then employ "network dissection" <a href="https://arxiv.org/abs/1704.05796">(Bau et al., 2017)</a>, 
+                responses to images from a large-scale dataset of natural scenes. We then employ "network dissection" <a href="https://arxiv.org/abs/1704.05796" target="_blank">(Bau et al., 2017)</a>, 
                 a method used for enhancing neural network interpretability by identifying and localizing the
                 most significant features in images for individual units of a trained network, and which has been used to study category
-                selectivity in the human brain <a href="https://www.biorxiv.org/content/10.1101/2022.03.16.484578v2">(Khosla & Wehbe, 2022)</a>. We adapt this approach to create a hypothesis-neutral model that is
+                selectivity in the human brain <a href="https://www.biorxiv.org/content/10.1101/2022.03.16.484578v2" target="_blank">(Khosla & Wehbe, 2022)</a>. We adapt this approach to create a hypothesis-neutral model that is
                 then used to explore the tuning properties of specific visual regions beyond category selectivity, which we call "brain
                 dissection".</p>
                 <br>
@@ -449,7 +449,7 @@
                 <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
                     <h2>How does brain dissection work?</h2>
                     <p align="justify">
-                    Inspired by <a href="https://www.biorxiv.org/content/10.1101/2022.03.16.484578v2">Khosla & Wehbe 2022</a>, brain dissection provides a hypothesis-neutral approach for identifying the most significant image features for
+                    Inspired by <a href="https://www.biorxiv.org/content/10.1101/2022.03.16.484578v2" target="_blank">Khosla & Wehbe 2022</a>, brain dissection provides a hypothesis-neutral approach for identifying the most significant image features for
                     predicting the response of a specific voxel. </p>
                     <br>
                     <p align="justify">The method trains a convolutional neural network tailored to predict voxel
@@ -490,7 +490,7 @@
                 <div class="row">
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:100%" id="depth1">
+                        <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth1">
                         <!-- <div class="text-block">
                             <h4>Subject 1</h4>
                         </div> -->
@@ -500,19 +500,19 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="Snow" onclick="myFunction(this);" style="width:100%" id="depth2">
+                        <img src="images/median_abs_depths_subject2.png" alt="median_abs_depths_subject2" onclick="myFunction(this);" style="width:100%" id="depth2">
                         <div class="centered">Subject 2</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="Mountains" onclick="myFunction(this);" style="width:100%" id="depth3">
+                        <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth3">
                         <div class="centered">Subject 3</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="Lights" onclick="myFunction(this);" style="width:100%" id="depth4">
+                        <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth4">
                         <div class="centered">Subject 4</div>
                         </div>
                     </div>
@@ -520,7 +520,7 @@
                 <div class="row">
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:100%"
+                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%"
                                 id="depth1">
                             <!-- <div class="text-block">
                                             <h4>Subject 1</h4>
@@ -531,21 +531,21 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="Snow" onclick="myFunction(this);" style="width:100%"
+                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject2" onclick="myFunction(this);" style="width:100%"
                                 id="depth2">
                             <div class="centered">Subject 6</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="Mountains" onclick="myFunction(this);"
+                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);"
                                 style="width:100%" id="depth3">
                             <div class="centered">Subject 7</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="Lights" onclick="myFunction(this);" style="width:100%"
+                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%"
                                 id="depth4">
                             <div class="centered">Subject 8</div>
                         </div>
@@ -598,6 +598,12 @@
 <!-- <script src="data/median_abs_depths_subject1.js"></script> -->
 <script type="module">
     // import { array } from './data/median_abs_depths_subject1.js'
+    const array_map = new Map();
+    import { array } from './data/median_abs_depths_subject1.js'
+    array_map.set('median_abs_depths_subject1', array)
+    import { array } from './data/median_abs_depths_subject2.js'
+    array_map.set('median_abs_depths_subject2', array)
+
     
     
     let inner = document.querySelector(".inner");
@@ -606,7 +612,6 @@
     // import { array1 } from 'data/median_abs_depths_subject1.js'
 
     function setCoords(e, type) {
-        import { array } from './data/median_abs_depths_subject1.js'
         
         const idX = `${type}X`;
         const idY = `${type}Y`;
@@ -622,6 +627,7 @@
         //     ['Sleep', 7]
         // ];
         var img = document.getElementById('expandedImg');
+        var array = map.get(img.alt)
         //or however you get a handle to the IMG
         // var width = img.clientWidth;
         // var height = img.clientHeight;
