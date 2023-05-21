@@ -385,10 +385,10 @@
                 quantitative explanation for higher visual areas. At
                 the same time, these model features have been critiqued as uninterpretable explanations, trading one black box (the
                 human brain) for another (a neural network). In this paper, we train networks to directly predict, from scratch, brain
-                responses to images from a large-scale dataset of natural scenes. We then employ "network dissection", 
+                responses to images from a large-scale dataset of natural scenes. We then employ "network dissection" <a href="https://arxiv.org/abs/1704.05796">(Bau et al., 2017)</a>, 
                 a method used for enhancing neural network interpretability by identifying and localizing the
                 most significant features in images for individual units of a trained network, and which has been used to study category
-                selectivity in the human brain. We adapt this approach to create a hypothesis-neutral model that is
+                selectivity in the human brain <a href="https://www.biorxiv.org/content/10.1101/2022.03.16.484578v2">(Khosla & Wehbe, 2022)</a>. We adapt this approach to create a hypothesis-neutral model that is
                 then used to explore the tuning properties of specific visual regions beyond category selectivity, which we call "brain
                 dissection".</p>
                 <br>
@@ -464,16 +464,16 @@
                 <!-- The grid: four columns -->
                 <div class="row">
                     <div class="column">
-                        <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:25%" id="depth1">
+                        <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:100%" id="depth1">
                     </div>
                     <div class="column">
-                        <img src="images/googlescholar.png" alt="Snow" onclick="myFunction(this);" style="width:25%" id="depth2">
+                        <img src="images/median_abs_depths_subject1.png" alt="Snow" onclick="myFunction(this);" style="width:100%" id="depth2">
                     </div>
                     <div class="column">
-                        <img src="images/code.png" alt="Mountains" onclick="myFunction(this);" style="width:25%" id="depth3">
+                        <img src="images/median_abs_depths_subject1.png" alt="Mountains" onclick="myFunction(this);" style="width:100%" id="depth3">
                     </div>
                     <div class="column">
-                        <img src="images/paper.png" alt="Lights" onclick="myFunction(this);" style="width:25%" id="depth4">
+                        <img src="images/median_abs_depths_subject1.png" alt="Lights" onclick="myFunction(this);" style="width:100%" id="depth4">
                     </div>
                 </div>
                 <br>
@@ -483,7 +483,7 @@
                 <div class="inner">
                     <!-- <img src="images/median_abs_depths_subject1.png" id="brain_image1" style="width:100%"> -->
                     <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                    <img id="expandedImg" style="width:100%" id="brain_image1">
+                    <img id="expandedImg" style="width:100%">
                     <div id="imgtext"></div>
                 </div>
                 <div class="log">
@@ -555,7 +555,7 @@
         // document.getElementById(idY).innerText = e[idY];
         var data = Math.round(data * 1000) / 1000
         document.getElementById(idX).innerText = data;
-        document.getElementById(idY).innerText = ycoord;
+        // document.getElementById(idY).innerText = ycoord;
     }
 
     function update(e) {
