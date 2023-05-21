@@ -643,19 +643,21 @@
         // setCoords(e, "screen");
     }
 
-    function myFunction(imgs) {
-        var expandImg = document.getElementById("expandedImg");
-        // var imgText = document.getElementById("imgtext");
-        expandImg.src = imgs.src;
-        expandImg.alt = imgs.alt;
-        // imgText.innerHTML = imgs.alt;
-        expandImg.parentElement.style.display = "block";
-    }
-
     inner.addEventListener("mouseenter", update, false);
     inner.addEventListener("mousemove", update, false);
     inner.addEventListener("mouseleave", update, false);
 
+</script>
+
+<script>
+    function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            // var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            expandImg.alt = imgs.alt;
+            // imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
 </script>
 
 </body>
