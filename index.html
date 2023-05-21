@@ -2,6 +2,15 @@
 <html>
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q75H4YSQ8M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q75H4YSQ8M');
+    </script>
     <!-- Adapted from Dave Epstein's BlogGAN webpage template: https://dave.ml/blobgan/ -->
     <title>Brain Dissection: fMRI-trained Networks Reveal Spatial Selectivity in the Processing of Natural Images</title>
     <meta charset="UTF-8">
@@ -500,13 +509,13 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject2" onclick="myFunction(this);" style="width:100%" id="depth2">
+                        <img src="images/median_abs_depths_subject2.png" alt="median_abs_depths_subject2" onclick="myFunction(this);" style="width:100%" id="depth2">
                         <div class="centered">Subject 2</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth3">
+                        <img src="images/median_abs_depths_subject2.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth3">
                         <div class="centered">Subject 3</div>
                         </div>
                     </div>
@@ -651,12 +660,12 @@
 
 <script>
     function myFunction(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            // var imgText = document.getElementById("imgtext");
-            expandImg.src = imgs.src;
-            expandImg.alt = imgs.alt;
-            // imgText.innerHTML = imgs.alt;
-            expandImg.parentElement.style.display = "block";
+        var expandImg = document.getElementById("expandedImg");
+        // var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        expandImg.alt = imgs.alt;
+        // imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
         }
 </script>
 
