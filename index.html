@@ -736,7 +736,7 @@
         var ycoord = e[idY];
 
         var img = document.getElementById('catImg');
-        let array = array_map.get(img.alt);
+        let array = array_map_category.get(img.alt);
 
         var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
         var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
