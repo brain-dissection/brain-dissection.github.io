@@ -599,12 +599,10 @@
 <script type="module">
     // import { array } from './data/median_abs_depths_subject1.js'
     const array_map = new Map();
-    import { array } from './data/median_abs_depths_subject1.js'
-    array_map.set('median_abs_depths_subject1', array)
-    import { array } from './data/median_abs_depths_subject2.js'
-    array_map.set('median_abs_depths_subject2', array)
-
-    
+    import { array } from './data/median_abs_depths_subject1.js';
+    array_map.set('median_abs_depths_subject1', array);
+    import { array } from './data/median_abs_depths_subject2.js';
+    array_map.set('median_abs_depths_subject2', array);
     
     let inner = document.querySelector(".inner");
     let log = document.querySelector(".log");
@@ -627,7 +625,7 @@
         //     ['Sleep', 7]
         // ];
         var img = document.getElementById('expandedImg');
-        var array = map.get(img.alt)
+        var array = map.get(img.alt);
         //or however you get a handle to the IMG
         // var width = img.clientWidth;
         // var height = img.clientHeight;
