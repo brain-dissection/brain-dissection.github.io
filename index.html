@@ -464,16 +464,16 @@
                 <!-- The grid: four columns -->
                 <div class="row">
                     <div class="column">
-                        <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:25%">
+                        <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:25%" id="depth1">
                     </div>
                     <div class="column">
-                        <img src="images/googlescholar.png" alt="Snow" onclick="myFunction(this);" style="width:25%">
+                        <img src="images/googlescholar.png" alt="Snow" onclick="myFunction(this);" style="width:25%" id="depth2">
                     </div>
                     <div class="column">
-                        <img src="images/code.png" alt="Mountains" onclick="myFunction(this);" style="width:25%">
+                        <img src="images/code.png" alt="Mountains" onclick="myFunction(this);" style="width:25%" id="depth3">
                     </div>
                     <div class="column">
-                        <img src="images/paper.png" alt="Lights" onclick="myFunction(this);" style="width:25%">
+                        <img src="images/paper.png" alt="Lights" onclick="myFunction(this);" style="width:25%" id="depth4">
                     </div>
                 </div>
                 <br>
@@ -528,7 +528,7 @@
         //     ['Play Game', 1],
         //     ['Sleep', 7]
         // ];
-        var img = document.getElementById('brain_image1');
+        var img = document.getElementById('expandedImg');
         //or however you get a handle to the IMG
         // var width = img.clientWidth;
         // var height = img.clientHeight;
