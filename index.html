@@ -330,6 +330,34 @@
         font-size: 35px;
         cursor: pointer;
         }
+
+        .centered {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.26);
+        }
+
+        .text-block {
+        position: absolute;
+        /* bottom: 25px;
+        right: 20px; */
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.26);
+        color: white;
+        padding-left: 30px;
+        padding-right: 30px;
+        }
+
+        .parentContainer {
+        position: relative;
+        text-align: center;
+        color: white;
+        }
     </style>
 </head>
 
@@ -464,18 +492,70 @@
                 <!-- The grid: four columns -->
                 <div class="row">
                     <div class="column">
+                        <div class="parentContainer">
                         <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:100%" id="depth1">
+                        <!-- <div class="text-block">
+                            <h4>Subject 1</h4>
+                        </div> -->
+                        <div class="centered">Subject 1</div>
+                        </div>
+                        
                     </div>
                     <div class="column">
+                        <div class="parentContainer">
                         <img src="images/median_abs_depths_subject1.png" alt="Snow" onclick="myFunction(this);" style="width:100%" id="depth2">
+                        <div class="centered">Subject 2</div>
+                        </div>
                     </div>
                     <div class="column">
+                        <div class="parentContainer">
                         <img src="images/median_abs_depths_subject1.png" alt="Mountains" onclick="myFunction(this);" style="width:100%" id="depth3">
+                        <div class="centered">Subject 3</div>
+                        </div>
                     </div>
                     <div class="column">
+                        <div class="parentContainer">
                         <img src="images/median_abs_depths_subject1.png" alt="Lights" onclick="myFunction(this);" style="width:100%" id="depth4">
+                        <div class="centered">Subject 4</div>
+                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/median_abs_depths_subject1.png" alt="Nature" onclick="myFunction(this);" style="width:100%"
+                                id="depth1">
+                            <!-- <div class="text-block">
+                                            <h4>Subject 1</h4>
+                                        </div> -->
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/median_abs_depths_subject1.png" alt="Snow" onclick="myFunction(this);" style="width:100%"
+                                id="depth2">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/median_abs_depths_subject1.png" alt="Mountains" onclick="myFunction(this);"
+                                style="width:100%" id="depth3">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/median_abs_depths_subject1.png" alt="Lights" onclick="myFunction(this);" style="width:100%"
+                                id="depth4">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <br>
                 <spacer type="horizontal" width="5" height="5"> </spacer>
                 <br>
