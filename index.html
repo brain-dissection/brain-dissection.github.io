@@ -561,7 +561,7 @@
                     <!-- <img src="images/median_abs_depths_subject1.png" id="brain_image1" style="width:100%"> -->
                     <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
                     <img id="expandedImg" style="width:100%">
-                    <div id="imgtext"></div>
+                    <!-- <div id="imgtext"></div> -->
                 </div>
                 <div class="log">
                     <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
@@ -597,13 +597,16 @@
 <!-- Taken from view-source:https://developer.mozilla.org/en-US/docs/Web/CSS/CSSOM_View/Coordinate_systems#example -->
 <!-- <script src="data/median_abs_depths_subject1.js"></script> -->
 <script type="module">
-    import { array } from './data/median_abs_depths_subject1.js'
+    // import { array } from './data/median_abs_depths_subject1.js'
+    
+    
     let inner = document.querySelector(".inner");
     let log = document.querySelector(".log");
 
     // import { array1 } from 'data/median_abs_depths_subject1.js'
 
     function setCoords(e, type) {
+        import { array } from './data/median_abs_depths_subject1.js'
         
         const idX = `${type}X`;
         const idY = `${type}Y`;
@@ -652,9 +655,10 @@
 <script>
     function myFunction(imgs) {
         var expandImg = document.getElementById("expandedImg");
-        var imgText = document.getElementById("imgtext");
+        // var imgText = document.getElementById("imgtext");
         expandImg.src = imgs.src;
-        imgText.innerHTML = imgs.alt;
+        expandImg.alt = imgs.alt;
+        // imgText.innerHTML = imgs.alt;
         expandImg.parentElement.style.display = "block";
     }
 </script>
