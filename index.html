@@ -686,7 +686,9 @@
         let array = array_map_abs_depth.get(img.alt);
 
         var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
         var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
 
         var data = array[ycoord_adjusted][xcoord_adjusted]
 
@@ -735,7 +737,9 @@
         let array = array_map_category.get(img.alt);
 
         var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
         var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
 
         var data = array[ycoord_adjusted][xcoord_adjusted]
 
