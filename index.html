@@ -643,13 +643,6 @@
         // setCoords(e, "screen");
     }
 
-    inner.addEventListener("mouseenter", update, false);
-    inner.addEventListener("mousemove", update, false);
-    inner.addEventListener("mouseleave", update, false);
-
-</script>
-
-<script>
     function myFunction(imgs) {
         var expandImg = document.getElementById("expandedImg");
         // var imgText = document.getElementById("imgtext");
@@ -658,6 +651,11 @@
         // imgText.innerHTML = imgs.alt;
         expandImg.parentElement.style.display = "block";
     }
+
+    inner.addEventListener("mouseenter", update, false);
+    inner.addEventListener("mousemove", update, false);
+    inner.addEventListener("mouseleave", update, false);
+
 </script>
 
 </body>
