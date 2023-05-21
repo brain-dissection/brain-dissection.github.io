@@ -636,7 +636,7 @@
                 </div>
                 <div class="log_cat">
                     <p>
-                        Category: <span id="offsetX">N/A</span>
+                        Category: <span id="catX">N/A</span>
                     </p>
                 </div> -->
 
@@ -691,7 +691,7 @@
         var data = array[ycoord_adjusted][xcoord_adjusted]
 
         var data = Math.round(data * 1000) / 1000;
-        document.getElementById(idX).innerText = data;
+        document.getElementById('depthX').innerText = data;
     }
 
     function update(e) {
@@ -739,7 +739,7 @@
 
         var data = array[ycoord_adjusted][xcoord_adjusted]
 
-        document.getElementById(idX).innerText = data;
+        document.getElementById('catX').innerText = data;
     }
 
     function update_cat(e) {
