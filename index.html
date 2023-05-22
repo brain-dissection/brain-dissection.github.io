@@ -610,13 +610,13 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject2.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth3">
+                        <img src="images/median_abs_depths_subject3.png" alt="median_abs_depths_subject3" onclick="myFunction(this);" style="width:100%" id="depth3">
                         <div class="centered">Subject 3</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                        <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%" id="depth4">
+                        <img src="images/median_abs_depths_subject4.png" alt="median_abs_depths_subject4" onclick="myFunction(this);" style="width:100%" id="depth4">
                         <div class="centered">Subject 4</div>
                         </div>
                     </div>
@@ -624,7 +624,7 @@
                 <div class="row">
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%"
+                            <img src="images/median_abs_depths_subject5.png" alt="median_abs_depths_subject5" onclick="myFunction(this);" style="width:100%"
                                 id="depth5">
                             <div class="centered">Subject 5</div>
                         </div>
@@ -632,21 +632,21 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject2" onclick="myFunction(this);" style="width:100%"
+                            <img src="images/median_abs_depths_subject6.png" alt="median_abs_depths_subject6" onclick="myFunction(this);" style="width:100%"
                                 id="depth6">
                             <div class="centered">Subject 6</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);"
+                            <img src="images/median_abs_depths_subject7.png" alt="median_abs_depths_subject7" onclick="myFunction(this);"
                                 style="width:100%" id="depth7">
                             <div class="centered">Subject 7</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/median_abs_depths_subject1.png" alt="median_abs_depths_subject1" onclick="myFunction(this);" style="width:100%"
+                            <img src="images/median_abs_depths_subject8.png" alt="median_abs_depths_subject8" onclick="myFunction(this);" style="width:100%"
                                 id="depth8">
                             <div class="centered">Subject 8</div>
                         </div>
@@ -1059,10 +1059,22 @@
 <script type="module">
     // import { array } from './data/median_abs_depths_subject1.js'
     const array_map_abs_depth = new Map();
-    import { array_absdepth_subj1 } from './data/median_abs_depths_subject1.js';
+    import { array_median_abs_depths_subject1 } from './data/median_abs_depths_subject1.js';
     array_map_abs_depth.set('median_abs_depths_subject1', array_absdepth_subj1);
-    import { array_absdepth_subj2 } from './data/median_abs_depths_subject2.js';
+    import { array_median_abs_depths_subject2 } from './data/median_abs_depths_subject2.js';
     array_map_abs_depth.set('median_abs_depths_subject2', array_absdepth_subj2);
+    import { array_median_abs_depths_subject3 } from './data/median_abs_depths_subject3.js';
+    array_map_abs_depth.set('median_abs_depths_subject3', array_absdepth_subj3);
+    import { array_median_abs_depths_subject4 } from './data/median_abs_depths_subject4.js';
+    array_map_abs_depth.set('median_abs_depths_subject4', array_absdepth_subj4);
+    import { array_median_abs_depths_subject5 } from './data/median_abs_depths_subject5.js';
+    array_map_abs_depth.set('median_abs_depths_subject5', array_absdepth_subj5);
+    import { array_median_abs_depths_subject6 } from './data/median_abs_depths_subject6.js';
+    array_map_abs_depth.set('median_abs_depths_subject6', array_absdepth_subj6);
+    import { array_median_abs_depths_subject7 } from './data/median_abs_depths_subject7.js';
+    array_map_abs_depth.set('median_abs_depths_subject7', array_absdepth_subj7);
+    import { array_median_abs_depths_subject8 } from './data/median_abs_depths_subject8.js';
+    array_map_abs_depth.set('median_abs_depths_subject8', array_absdepth_subj8);
     
     let inner = document.querySelector(".inner");
     let log = document.querySelector(".log");
