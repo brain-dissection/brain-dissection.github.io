@@ -139,6 +139,82 @@
         width: 100%;
         text-align: center;
         }
+
+        .inner_sn {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        color: white;
+        cursor: crosshair;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        }
+        
+        .log_sn {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        }
+
+        .inner_gc {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        color: white;
+        cursor: crosshair;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        }
+        
+        .log_gc {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        }
+
+        .inner_shading {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        color: white;
+        cursor: crosshair;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        }
+        
+        .log_shading {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        }
+
+        .inner_gqa {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        color: white;
+        cursor: crosshair;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        }
+        
+        .log_gqa {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        }
     </style>
     
 
@@ -495,15 +571,18 @@
                 <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
                     <h2>Results</h2>
                 </div>
+                <!-- <h3>Selectivity Measures</h3> -->
                 <div>
-                <p>Below are interactive selectivity brain flatmaps for each measure.</p>
-                </div>
-                <div>
-                <p>To observe the voxel selectivity at a location on the flatmap:<br>
+                <!-- <p style="border-width:3px; border-style:solid; border-color:#b8b5b5; padding: 1em;"> -->
+                    <p style="background-color:#b8b5b51e">
+                    Below are interactive selectivity brain flatmaps for each measure.<br>
+                    To observe the voxel selectivity at a location on the flatmap:<br>
                     1. <b>Click on a subject</b><br>
                     2. <b>Hover over a location-of-interest on the brain map</b> </p>
                 </div>
                 <br>
+
+                <!-- Absolute Depth -->
                 <h3>Absolute Depth</h3>
                 <!-- The grid: four columns -->
                 <div class="row">
@@ -573,7 +652,228 @@
                         Depth: <span id="depthX">N/A</span> meters
                     </p>
                 </div>
+                
+                <!-- Surface Normals -->
+                <h3>Surface Normals</h3>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn1">
+                            <div class="centered">Subject 1</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn2">
+                            <div class="centered">Subject 2</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn3">
+                            <div class="centered">Subject 3</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn4">
+                            <div class="centered">Subject 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn5">
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn6">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn7">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_sn(this);" style="width:100%" id="sn8">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inner_sn">
+                    <img id="snImg" style="width:100%">
+                </div>
+                <div class="log_sn">
+                    <p>
+                        Surface Normal (bin): <span id="snX">N/A</span> 
+                    </p>
+                </div>
 
+                <!-- Guassian Curvature -->
+                <h3>Guassian Curvature</h3>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc1">
+                            <div class="centered">Subject 1</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc2">
+                            <div class="centered">Subject 2</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc3">
+                            <div class="centered">Subject 3</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc4">
+                            <div class="centered">Subject 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc5">
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc6">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc7">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gc(this);" style="width:100%" id="gc8">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner_gc">
+                    <img id="gcImg" style="width:100%">
+                </div>
+                <div class="log_gc">
+                    <p>
+                        Guassian Curvature: <span id="gcX">N/A</span>
+                    </p>
+                </div>
+
+                <!-- RESHADING -->
+                <h3>Shading</h3>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading1">
+                            <div class="centered">Subject 1</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading2">
+                            <div class="centered">Subject 2</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading3">
+                            <div class="centered">Subject 3</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading4">
+                            <div class="centered">Subject 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading5">
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading6">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading7">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_shading(this);" style="width:100%" id="shading8">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner_shading">
+                    <img id="shadingImg" style="width:100%">
+                </div>
+                <div class="log_shading">
+                    <p>
+                        Shading: <span id="shadingX">N/A</span>
+                    </p>
+                </div>
+                
+                <!-- Places365 Category -->
                 <h3>Places365 Category</h3>
                 <div class="row">
                     <div class="column">
@@ -644,6 +944,80 @@
                 <div class="log_cat">
                     <p>
                         Category: <span id="catX">N/A</span>
+                    </p>
+                </div>
+
+                <!-- GQA Category -->
+                <h3>GQA Category</h3>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa1">
+                            <div class="centered">Subject 1</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa2">
+                            <div class="centered">Subject 2</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa3">
+                            <div class="centered">Subject 3</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa4">
+                            <div class="centered">Subject 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa5">
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa6">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa7">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.png" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_gqa(this);" style="width:100%" id="gqa8">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inner_gqa">
+                    <img id="gqaImg" style="width:100%">
+                </div>
+                <div class="log_gqa">
+                    <p>
+                        Category: <span id="gqaX">N/A</span>
                     </p>
                 </div>
 
@@ -723,6 +1097,152 @@
         }
 </script>
 
+<!-- SURFACE NORMALS -->
+<script type="module">
+    const array_map_sn = new Map();
+    import { array_category_subj1 } from './data/best_cat_per_unit_subject1.js';
+    array_map_sn.set('best_cat_per_unit_subject1', array_category_subj1);
+
+    let inner_sn = document.querySelector(".inner_sn");
+    let log_sn = document.querySelector(".log_sn");
+
+    function setCoords(e, type) {
+
+        const idX = `${type}X`;
+        const idY = `${type}Y`;
+
+        var xcoord = e[idX];
+        var ycoord = e[idY];
+
+        var img = document.getElementById('snImg');
+        let array = array_map_sn.get(img.alt);
+
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
+
+        var data = array[ycoord_adjusted][xcoord_adjusted]
+
+        document.getElementById('snX').innerText = data;
+    }
+
+    function update_sn(e) {
+        setCoords(e, "offset");
+    }
+
+    inner_sn.addEventListener("mouseenter", update_sn, false);
+    inner_sn.addEventListener("mousemove", update_sn, false);
+    inner_sn.addEventListener("mouseleave", update_sn, false);
+
+</script>
+<script>
+    function myFunction_sn(imgs) {
+        var expandImg = document.getElementById("snImg");
+        expandImg.src = imgs.src;
+        expandImg.alt = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
+<!-- GUASSIAN CURVATURE -->
+<script type="module">
+    const array_map_gc = new Map();
+    import { array_category_subj1 } from './data/best_cat_per_unit_subject1.js';
+    array_map_gc.set('best_cat_per_unit_subject1', array_category_subj1);
+
+    let inner_gc = document.querySelector(".inner_gc");
+    let log_gc = document.querySelector(".log_gc");
+
+    function setCoords(e, type) {
+
+        const idX = `${type}X`;
+        const idY = `${type}Y`;
+
+        var xcoord = e[idX];
+        var ycoord = e[idY];
+
+        var img = document.getElementById('gcImg');
+        let array = array_map_gc.get(img.alt);
+
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
+
+        var data = array[ycoord_adjusted][xcoord_adjusted]
+        
+        var data = Math.round(data * 1000) / 1000;
+        document.getElementById('gcX').innerText = data;
+    }
+
+    function update_gc(e) {
+        setCoords(e, "offset");
+    }
+
+    inner_gc.addEventListener("mouseenter", update_gc, false);
+    inner_gc.addEventListener("mousemove", update_gc, false);
+    inner_gc.addEventListener("mouseleave", update_gc, false);
+
+</script>
+<script>
+    function myFunction_gc(imgs) {
+        var expandImg = document.getElementById("gcImg");
+        expandImg.src = imgs.src;
+        expandImg.alt = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
+<!-- RESHADING -->
+<script type="module">
+    const array_map_shading = new Map();
+    import { array_category_subj1 } from './data/best_cat_per_unit_subject1.js';
+    array_map_shading.set('best_cat_per_unit_subject1', array_category_subj1);
+
+    let inner_shading = document.querySelector(".inner_shading");
+    let log_shading = document.querySelector(".log_shading");
+
+    function setCoords(e, type) {
+
+        const idX = `${type}X`;
+        const idY = `${type}Y`;
+
+        var xcoord = e[idX];
+        var ycoord = e[idY];
+
+        var img = document.getElementById('shadingImg');
+        let array = array_map_shading.get(img.alt);
+
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
+
+        var data = array[ycoord_adjusted][xcoord_adjusted]
+        
+        var data = Math.round(data * 1000) / 1000;
+        document.getElementById('shadingX').innerText = data;
+    }
+
+    function update_shading(e) {
+        setCoords(e, "offset");
+    }
+
+    inner_shading.addEventListener("mouseenter", update_shading, false);
+    inner_shading.addEventListener("mousemove", update_shading, false);
+    inner_shading.addEventListener("mouseleave", update_shading, false);
+
+</script>
+<script>
+    function myFunction_shading(imgs) {
+        var expandImg = document.getElementById("shadingImg");
+        expandImg.src = imgs.src;
+        expandImg.alt = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
 <!-- CATEGORY -->
 <script type="module">
     const array_map_category = new Map();
@@ -765,6 +1285,54 @@
 <script>
     function myFunction_cat(imgs) {
         var expandImg = document.getElementById("catImg");
+        expandImg.src = imgs.src;
+        expandImg.alt = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
+<!-- GQA -->
+<script type="module">
+    const array_map_gqa = new Map();
+    import { array_category_subj1 } from './data/best_cat_per_unit_subject1.js';
+    array_map_gqa.set('best_cat_per_unit_subject1', array_category_subj1);
+
+    let inner_gqa = document.querySelector(".inner_gqa");
+    let log_gqa = document.querySelector(".log_gqa");
+
+    function setCoords(e, type) {
+
+        const idX = `${type}X`;
+        const idY = `${type}Y`;
+
+        var xcoord = e[idX];
+        var ycoord = e[idY];
+
+        var img = document.getElementById('gqaImg');
+        let array = array_map_gqa.get(img.alt);
+
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
+
+        var data = array[ycoord_adjusted][xcoord_adjusted]
+
+        document.getElementById('gqaX').innerText = data;
+    }
+
+    function update_gqa(e) {
+        setCoords(e, "offset");
+    }
+
+    inner_cat.addEventListener("mouseenter", update_gqa, false);
+    inner_cat.addEventListener("mousemove", update_gqa, false);
+    inner_cat.addEventListener("mouseleave", update_gqa, false);
+
+</script>
+<script>
+    function myFunction_gqa(imgs) {
+        var expandImg = document.getElementById("gqaImg");
         expandImg.src = imgs.src;
         expandImg.alt = imgs.alt;
         expandImg.parentElement.style.display = "block";
