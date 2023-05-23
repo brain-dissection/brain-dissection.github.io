@@ -215,6 +215,25 @@
         width: 100%;
         text-align: center;
         }
+
+        .inner_demo {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        color: white;
+        cursor: crosshair;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        }
+        
+        .log_demo {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        }
     </style>
     
 
@@ -497,6 +516,22 @@
                 <br>
                 <spacer type="horizontal" width="5" height="5"> </spacer>
                 <br>
+                <!-- <div>
+                    <p><b>Hover over the brain and observe the depth selectivity (preferences)</b></p>
+                </div> -->
+                <div class="inner_demo">
+                    <img src="images/normals_medians_subject1.jpg" id="absdepthdemoImg" style="width:100%">
+                </div>
+                <div class="log_demo">
+                    <p>
+                        Depth selectivity: <span id="depthdemoX">N/A</span> meters
+                    </p>
+                    <p>
+                        See <a href="#anchor-name">Results</a> below for more interactive flatmaps!
+                    </p>
+                </div>
+
+                
 
                 <!-- <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
                     <img src="images/Example_each_room_fast.gif" style="width:100%">
@@ -569,7 +604,7 @@
                 <hr>
 
                 <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
-                    <h2>Results</h2>
+                    <h2 id="anchor-name">Results</h2>
                 </div>
                 <div>
                     <h3>Interactive Brain Flatmaps</h3>
@@ -593,7 +628,7 @@
                 <br>
 
                 <!-- Absolute Depth -->
-                <h4>Absolute Depth</h4>
+                <h4>Depth</h4>
                 <!-- <p><b>Instructions: Click on a subject, then hover over the brain</b></p> -->
                 <!-- The grid: four columns -->
                 <div class="row">
@@ -887,80 +922,6 @@
                         Shading: <span id="shadingX">N/A</span>
                     </p>
                 </div>
-                
-                <!-- Places365 Category -->
-                <h4>Places365 Category</h4>
-                <div class="row">
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat1">
-                            <div class="centered">Subject 1</div>
-                        </div>
-                
-                    </div>
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject2.jpg" alt="best_cat_per_unit_subject2"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat2">
-                            <div class="centered">Subject 2</div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject3.jpg" alt="best_cat_per_unit_subject3"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat3">
-                            <div class="centered">Subject 3</div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject4.jpg" alt="best_cat_per_unit_subject4"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat4">
-                            <div class="centered">Subject 4</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject5.jpg" alt="best_cat_per_unit_subject5"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat5">
-                            <div class="centered">Subject 5</div>
-                        </div>
-                
-                    </div>
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject6.jpg" alt="best_cat_per_unit_subject6"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat6">
-                            <div class="centered">Subject 6</div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject7.jpg" alt="best_cat_per_unit_subject7"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat7">
-                            <div class="centered">Subject 7</div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject8.jpg" alt="best_cat_per_unit_subject8"
-                                onclick="myFunction_cat(this);" style="width:100%" id="cat8">
-                            <div class="centered">Subject 8</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="inner_cat">
-                    <img id="catImg" style="width:100%">
-                </div>
-                <div class="log_cat">
-                    <p>
-                        Category: <span id="catX">N/A</span>
-                    </p>
-                </div>
 
                 <!-- GQA Category -->
                 <h4>GQA Category</h4>
@@ -1033,6 +994,80 @@
                 <div class="log_gqa">
                     <p>
                         Category: <span id="gqaX">N/A</span>
+                    </p>
+                </div>
+                
+                <!-- Places365 Category -->
+                <h4>Places365 Category</h4>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat1">
+                            <div class="centered">Subject 1</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject2.jpg" alt="best_cat_per_unit_subject2"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat2">
+                            <div class="centered">Subject 2</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject3.jpg" alt="best_cat_per_unit_subject3"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat3">
+                            <div class="centered">Subject 3</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject4.jpg" alt="best_cat_per_unit_subject4"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat4">
+                            <div class="centered">Subject 4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject5.jpg" alt="best_cat_per_unit_subject5"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat5">
+                            <div class="centered">Subject 5</div>
+                        </div>
+                
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject6.jpg" alt="best_cat_per_unit_subject6"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat6">
+                            <div class="centered">Subject 6</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject7.jpg" alt="best_cat_per_unit_subject7"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat7">
+                            <div class="centered">Subject 7</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="parentContainer">
+                            <img src="images/best_cat_per_unit_subject8.jpg" alt="best_cat_per_unit_subject8"
+                                onclick="myFunction_cat(this);" style="width:100%" id="cat8">
+                            <div class="centered">Subject 8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inner_cat">
+                    <img id="catImg" style="width:100%">
+                </div>
+                <div class="log_cat">
+                    <p>
+                        Category: <span id="catX">N/A</span>
                     </p>
                 </div>
 
@@ -1439,6 +1474,49 @@
         expandImg.alt = imgs.alt;
         expandImg.parentElement.style.display = "block";
     }
+</script>
+
+<!-- ABSOLUTE DEPTH -->
+<script type="module">
+    // import { array } from './data/median_abs_depths_subject1.js'
+    // const array_map_abs_depth_demo = new Map();
+    import { array_median_abs_depths_subject1 } from './data/median_abs_depths_subject1.js';
+    // array_map_abs_depth_demo.set('median_abs_depths_subject1', array_median_abs_depths_subject1);
+
+    let inner_demo = document.querySelector(".inner_demo");
+    let log_demo = document.querySelector(".log_demo");
+
+    function setCoords(e, type) {
+
+        const idX = `${type}X`;
+        const idY = `${type}Y`;
+        // const idImg = `${type}Img`;
+
+        var xcoord = e[idX];
+        var ycoord = e[idY];
+
+        var img = document.getElementById('absdepthdemoImg');
+        let array = array_median_abs_depths_subject1 // array_map_abs_depth_demo.get(img.alt);
+
+        var ycoord_adjusted = Math.max(0, Math.min(parseInt(ycoord * (512 / img.clientHeight)), 512 - 1));
+        ycoord_adjusted = ycoord_adjusted || 0
+        var xcoord_adjusted = Math.max(0, Math.min(parseInt(xcoord * (1124 / img.clientWidth)), 1124 - 1));
+        xcoord_adjusted = xcoord_adjusted || 0
+
+        var data = array[ycoord_adjusted][xcoord_adjusted]
+
+        var data = Math.round(data * 1000) / 1000;
+        document.getElementById('depthdemoX').innerText = data;
+    }
+
+    function update(e) {
+        setCoords(e, "offset");
+    }
+
+    inner_demo.addEventListener("mouseenter", update, false);
+    inner_demo.addEventListener("mousemove", update, false);
+    inner_demo.addEventListener("mouseleave", update, false);
+
 </script>
 
 </body>
