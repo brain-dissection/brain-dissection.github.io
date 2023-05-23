@@ -870,6 +870,10 @@
                         Guassian Curvature: <span id="gcX">N/A</span>
                     </p>
                 </div>
+                <div class="inner_gc">
+                    <!-- <img id="snImg" style="width:100%"> -->
+                    <center><img style="width:30%" id="gcImg2"></center>
+                </div>
 
                 <!-- RESHADING -->
                 <h4>Shading</h4>
@@ -942,6 +946,10 @@
                     <p>
                         Shading: <span id="shadingX">N/A</span>
                     </p>
+                </div>
+                <div class="inner_shading">
+                    <!-- <img id="snImg" style="width:100%"> -->
+                    <center><img style="width:30%" id="shadingImg2"></center>
                 </div>
 
                 <!-- GQA Category -->
@@ -1307,6 +1315,10 @@
         expandImg.src = imgs.src;
         expandImg.alt = imgs.alt;
         expandImg.parentElement.style.display = "block";
+        var expandImg2 = document.getElementById("gcImg2");
+        expandImg2.src = 'images/guassian_curvature_colorbar.jpg';
+        expandImg2.alt = 'gc_alt';
+        expandImg2.parentElement.style.display = "block";
     }
 </script>
 
@@ -1370,6 +1382,10 @@
         expandImg.src = imgs.src;
         expandImg.alt = imgs.alt;
         expandImg.parentElement.style.display = "block";
+        var expandImg2 = document.getElementById("shadingImg2");
+        expandImg2.src = 'images/shading_colorbar.jpg';
+        expandImg2.alt = 'shading_alt';
+        expandImg2.parentElement.style.display = "block";
     }
 </script>
 
