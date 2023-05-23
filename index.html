@@ -234,6 +234,13 @@
         width: 100%;
         text-align: center;
         }
+
+        .demo_gif {
+        position: relative;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+        }
     </style>
     
 
@@ -520,8 +527,10 @@
                     <p><b>Hover over the brain and observe the depth selectivity (preferences)</b></p>
                 </div> -->
                 <!-- GIF: https://loading.io/asset/662945 -->
+                <div class="demo_gif">
+                    <img src="images/demo_gif.gif">
+                </div>
                 <div class="inner_demo">
-                    <img src="images/demo_gif.gif" style="width:50%">
                     <img src="images/normals_medians_subject1.jpg" id="absdepthdemoImg" style="width:100%">
                 </div>
                 <div class="log_demo">
@@ -1478,7 +1487,7 @@
     }
 </script>
 
-<!-- ABSOLUTE DEPTH -->
+<!-- DEMO -->
 <script type="module">
     // import { array } from './data/median_abs_depths_subject1.js'
     // const array_map_abs_depth_demo = new Map();
