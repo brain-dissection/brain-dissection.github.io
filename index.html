@@ -576,7 +576,8 @@
                     <p align="justify"> To gain a better understanding of how 3D structure is represented in the brain, we used brain dissection to quantify the
                     selectivity (preference) for each voxel across the high-level visual cortex for the four spatial measures and two category datasets. This process allowed us to
                     create a detailed selectivity (preference) map for each voxel that reveals how 2D inputs are transformed into 3D representations that
-                    enable reasoning about the physical world. Hover over the brain flatmaps below to reveal the selectivity value at that location.</p>
+                    enable reasoning about the physical world. Hover over the brain flatmaps below to reveal the selectivity value at that location. We rendered the voxel data on flatmap images using <a href="https://gallantlab.org/pycortex/"
+                        target="_blank">pycortex</a>.</p>
                 </div>
                 <!-- <h3>Selectivity Measures</h3> -->
                 <div>
@@ -586,7 +587,8 @@
                     <!-- Below are interactive selectivity brain flatmaps for each measure.<br> -->
                     To observe the voxel selectivity (preference) at a location on the flatmap:<br>
                     1. <b>Click on a subject</b><br>
-                    2. <b>Hover over a location-of-interest on the brain map</b> </p>
+                    2. <b>Hover over a location-of-interest on the brain map</b>
+                    </p>
                 </div>
                 <br>
 
@@ -965,7 +967,7 @@
                 <div class="row">
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject1.jpg" alt="best_cat_per_unit_GQA_subject1"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa1">
                             <div class="centered">Subject 1</div>
                         </div>
@@ -973,21 +975,21 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject2.jpg" alt="best_cat_per_unit_GQA_subject2"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa2">
                             <div class="centered">Subject 2</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject3.jpg" alt="best_cat_per_unit_GQA_subject3"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa3">
                             <div class="centered">Subject 3</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject4.jpg" alt="best_cat_per_unit_GQA_subject4"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa4">
                             <div class="centered">Subject 4</div>
                         </div>
@@ -996,7 +998,7 @@
                 <div class="row">
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject5.jpg" alt="best_cat_per_unit_GQA_subject5"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa5">
                             <div class="centered">Subject 5</div>
                         </div>
@@ -1004,21 +1006,21 @@
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject6.jpg" alt="best_cat_per_unit_GQA_subject6"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa6">
                             <div class="centered">Subject 6</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject7.jpg" alt="best_cat_per_unit_GQA_subject7"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa7">
                             <div class="centered">Subject 7</div>
                         </div>
                     </div>
                     <div class="column">
                         <div class="parentContainer">
-                            <img src="images/best_cat_per_unit_subject1.jpg" alt="best_cat_per_unit_subject1"
+                            <img src="images/best_cat_per_unit_GQA_subject8.jpg" alt="best_cat_per_unit_GQA_subject8"
                                 onclick="myFunction_gqa(this);" style="width:100%" id="gqa8">
                             <div class="centered">Subject 8</div>
                         </div>
@@ -1380,8 +1382,22 @@
 <!-- GQA -->
 <script type="module">
     const array_map_gqa = new Map();
-    import { array_category_subj1 } from './data/best_cat_per_unit_subject1.js';
-    array_map_gqa.set('best_cat_per_unit_subject1', array_category_subj1);
+    import { array_best_cat_per_unit_GQA_subject1 } from './data/best_cat_per_unit_GQA_subject1.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject1', array_best_cat_per_unit_GQA_subject1);
+    import { array_best_cat_per_unit_GQA_subject2 } from './data/best_cat_per_unit_GQA_subject2.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject2', array_best_cat_per_unit_GQA_subject2);
+    import { array_best_cat_per_unit_GQA_subject3 } from './data/best_cat_per_unit_GQA_subject3.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject3', array_best_cat_per_unit_GQA_subject3);
+    import { array_best_cat_per_unit_GQA_subject4 } from './data/best_cat_per_unit_GQA_subject4.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject4', array_best_cat_per_unit_GQA_subject4);
+    import { array_best_cat_per_unit_GQA_subject5 } from './data/best_cat_per_unit_GQA_subject5.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject5', array_best_cat_per_unit_GQA_subject5);
+    import { array_best_cat_per_unit_GQA_subject6 } from './data/best_cat_per_unit_GQA_subject6.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject6', array_best_cat_per_unit_GQA_subject6);
+    import { array_best_cat_per_unit_GQA_subject7 } from './data/best_cat_per_unit_GQA_subject7.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject7', array_best_cat_per_unit_GQA_subject7);
+    import { array_best_cat_per_unit_GQA_subject8 } from './data/best_cat_per_unit_GQA_subject8.js';
+    array_map_gqa.set('best_cat_per_unit_GQA_subject8', array_best_cat_per_unit_GQA_subject8);
 
     let inner_gqa = document.querySelector(".inner_gqa");
     let log_gqa = document.querySelector(".log_gqa");
