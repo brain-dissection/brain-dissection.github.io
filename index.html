@@ -394,6 +394,59 @@
         
     </style>
 
+    <!-- Interactive button -->
+    <style>
+        .btn-interact {
+            width: 133px;
+            height: 35px;
+            cursor: pointer;
+            border-radius: 25px;
+            background: transparent;
+            border: 2px solid #91C9FF;
+            outline: none;
+            transition: 1s ease-in-out;
+            text-decoration: none;
+            align-items: center;
+            display: flex;
+            text-align: center;
+            font-weight: 500;
+            color: black;
+        }
+    
+        .btn-interact:link {
+            color: black;
+        }
+    
+        .btn-interact:visited {
+            color: black;
+        }
+    
+        /* .btn-citation:hover {
+                color: black;
+            } */
+        .btn-interact:active {
+            color: black;
+        }
+    
+        .btn-interact:hover {
+            transition: 0.75s ease-in-out;
+            background: #8bb2ff1e;
+            text-decoration: none;
+            font-weight: 500;
+            color: black;
+        }
+    
+        .vertical-center-interact {
+            height: 70%;
+            position: relative;
+            /* top: 0px;
+                right: 0;
+                float: left; */
+            padding-right: 7px;
+            padding-left: 6px;
+        }
+    </style>
+
     <style>
         .vertical-center {
             height: 80%;
@@ -517,6 +570,9 @@
                     <a href="https://github.com/Gabesarch/brain-dissection" target="_blank" class="btn-code" role="button">
                         <img src="images/code.png" class="vertical-center-code"> Code
                     </a>
+                    <a href="#results" class="btn-interact" role="button">
+                        <img src="images/brain-clipart-lg.png" class="vertical-center-interact"> Interactive
+                    </a>
                     <a href="#citation" class="btn-citation" role="button">
                         <img src="images/googlescholar.png" class="vertical-center-cit"> Citation
                     </a>
@@ -535,9 +591,9 @@
                 text-align: center;
                 margin: auto;
                 } -->
-                <div>
+
+                <!-- <div>
                     <img src="images/demo_gif.gif" style="text-align: center; width: 50%; display: block; margin-left: auto; margin-right: auto; margin-bottom:0; padding: 0">
-                    <!-- <p style="text-align: center; display: block; margin : 0; padding: 0"><font size="1">(It may take a second to load)</font></p> -->
                 </div>
                 <div class="inner_demo">
                     <img src="images/normals_medians_subject1.jpg" id="absdepthdemoImg" style="width:100%">
@@ -549,7 +605,12 @@
                     <p>
                         See <a href="#anchor-name">Results</a> below for more interactive brains!
                     </p>
-                </div>
+                </div> -->
+                <!-- <div class="log_demo">
+                    <p>
+                        See <a href="#anchor-name">Results</a> below for interactive brains!
+                    </p>
+                </div> -->
 
                 
 
@@ -571,8 +632,8 @@
                 then used to explore the tuning properties of specific visual regions beyond category selectivity, which we call "brain
                 dissection".</p>
                 <br>
-                <spacer type="horizontal" width="5" height="5"> </spacer>
-                <br>
+                <!-- <spacer type="horizontal" width="1" height="1"> </spacer> -->
+                <!-- <br> -->
                 <p align="justify">We use brain dissection to examine a range of ecologically important, intermediate properties, including
                 depth, surface normals, curvature, and object relations and find consistent feature selectivity differences across
                 sub-regions of the parietal, lateral, and ventral visual streams. For example, in the three scene-selective network we
@@ -602,15 +663,18 @@
                     Inspired by <a href="https://www.biorxiv.org/content/10.1101/2022.03.16.484578v2" target="_blank">Khosla & Wehbe 2022</a>, brain dissection provides a hypothesis-neutral approach for identifying the most significant image features for
                     predicting the response of a specific voxel. </p>
                     <br>
+                    <!-- <hr style="height:1px; visibility:hidden;" > -->
                     <p align="justify">The method trains a convolutional neural network tailored to predict voxel
                     responses within a defined sub-region. By training a backbone network for this sub-region and incorporating a linear
                     readout for each voxel, the network learns to extract image features crucial for predicting each voxel
                     (<b>Figure A below</b>).</p>
                     <br>
+                    <!-- <hr style="height:3px; visibility:hidden;" /> -->
                     <p align="justify">After training, we "dissect" the network by inputting held-out images and extracting regions that
                     the network considers most relevant for each voxel (<b>Figure B below</b>). Subsequently, we analyze properties of the
                     voxel-selective regions within the images.
                     </p>
+                    
                     <br>
                     <img src="images/Figure1_full_V7.png" style="width:100%">
                     <p> </p>
@@ -623,7 +687,7 @@
                 <hr>
 
                 <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
-                    <h2 id="anchor-name">Results</h2>
+                    <h2 id="results">Results</h2>
                 </div>
                 <div>
                     <h3>Interactive Brain Flatmaps</h3>
