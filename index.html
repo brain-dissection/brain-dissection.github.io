@@ -678,13 +678,15 @@
                     <br>
                     <img src="images/Figure1_full_V7.png" style="width:100%">
                     <p> </p>
-                    <br>
-                    <spacer type="horizontal" width="100" height="50"> </spacer>
-                    <br>
+                    
                     <!-- <p align="justify"><b>A. fMRI Response-Optimized Training Procedure.</b> All voxels in an ROI share a convolutional backbone. Each voxel is assigned a set of learnable spatial and feature weights. The voxel weights are applied to the output features of the backbone network to predict the voxel response for an input image. Training minimizes the mean squared error between the predicted and actual voxel response of NSD images.</p>
                     <p align="justify"><b>B. Dissection Procedure.</b> For each voxel in an ROI and test image, we obtain the voxel's selectivity binary mask by applying the voxel's feature weights to the output of the ROI-specific backbone and thresholding the resultant feature map. We examine the overlapping region between the mask and a measurement of interest (e.g., depth map).</p> -->
                 </div>
+                <br>
+                <spacer type="horizontal" width="100" height="50"> </spacer>
+                <br>
                 <hr>
+                
 
                 <div class="w3-display-container w3-row w3-white w3-margin-bottom w3-center">
                     <h2 id="results">Results</h2>
@@ -1165,8 +1167,79 @@
                         Category: <span id="catX">N/A</span>
                     </p>
                 </div>
-
+                
+                <br>
+                <spacer type="horizontal" width="100" height="50"> </spacer>
+                <br>
                 <hr>
+
+                <div>
+                    <h3>High-level Visual Areas</h3>
+                    <p align="justify"> We quantified differences in the spatial measures for high-level visual regions-of-interest (see paper for ROI definitions). Medial and Ventromedial areas show larger absolute and relative depth preferences, flatter surfaces, and darker shading, while Ventrolateral and Lateral regions prefer lower average absolute depths, curvier
+                    objects, and lighter shading.</p>
+                    <br>
+                    <img src="images/Figure3_histogram_V1.png" style="width:100%">
+                    <p><b>Figure. </b><small>Histogram binning of voxels for each measure for the high level visual ROIs. Each color represents
+                            a different subject. Gray
+                            vertical dotted lines indicate the grand mean, and red vertical dotted lines indicate the 95% confidence
+                            intervals.</small></p>
+                    <!-- <img src="images/Figure3_nohistogram_V2.png" style="width:100%">
+                    <p><b>Figure. </b><small>Mean ± standard deviation (N=8 subjects) for each of the high-level visual ROIs. <sup>***</sup>=significantly
+                        different from all other ROIs, <sup>**</sup>=significantly different from all but one other ROI, <sup>*</sup>=significantly
+                        different from all but two other ROIs (p<0.01; <em>post hoc</em> Tukey test; N=8 subjects).</small></p> -->
+                </div>
+                <br>
+                <spacer type="horizontal" width="100" height="50"> </spacer>
+                <br>
+                <hr>
+                <div>
+                    <h3>Scene Selective Areas</h3>
+                    <p align="justify"> We quanitfied differences in the spatial measures for the “scene network”, the occipital place area (OPA), parahippocampal place
+                    area (PPA), and the retrosplenial complex (RSC). RSC appears to have a unique role
+                    in processing far spatial information and outdoor scenes, showing a preference for greater metric
+                    and relative depths, and right/left surface normals indicative of vertical structures and a possibly
+                    bodycentric representation of space. In contrast, PPA and OPA show a stronger preference for “up”
+                    surface normals, underscoring their contributions to a possibly allocentric representation of space.</p>
+                    <br>
+                    <img src="images/Figure4a_histogram_V1.png" style="width:100%">
+                    <p><b>Figure. </b><small>Histogram binning of voxels for each measure for the scene ROIs. Each color represents a different subject. Gray
+                    vertical dotted lines indicate the grand mean, and red vertical dotted lines indicate the 95% confidence intervals.</small></p>
+                    <!-- <img src="images/Figure4a_nohistograms_V2_barplotsonly.jpg" style="width:100%">
+                    <p><b>Figure. </b><small>Mean ± standard deviation (N=8 subjects) for each of the scene ROIs.
+                            <sup>***</sup>=significantly
+                            different from all other ROIs, <sup>**</sup>=significantly different from all but one other ROI,
+                            <sup>*</sup>=significantly
+                            different from all but two other ROIs (p<0.01; <em>post hoc</em> Tukey test; N=8 subjects).</small></p> -->
+                </div>
+                <br>
+                <spacer type="horizontal" width="100" height="50"> </spacer>
+                <br>
+                <hr>
+                <div>
+                <h3>Category WordClouds</h3>
+                <p align="justify"> We examined the most selective categories for each ROI in the GQA dataset using brain dissection. We find distinct preferences for object relationships, attributes,
+                and categories in high-level visual ROIs, with Parietal areas favoring inanimate objects and spatial relations, Lateral areas
+                preferring person and animate objects, and Ventral areas favoring both persons and objects, aligning
+                with previous literature.</p>
+                
+                <p align="justify">Scene ROIs also show distinctions. OPA shows greater selectivity for indoor scene elements,
+                such as chairs, tables, and floors. PPA exhibits a mix of indoor and outdoor preferences, whereas RSC shows a clear preference for outdoor scene elements like trees, buildings, and the sky, once
+                again reinforcing a dichotomy between local space interactions and navigation. Furthermore, when
+                considering attributes, RSC again demonstrates more selectivity for “outdoor” attributes compared
+                to PPA and OPA, which show higher selectivity for indoor elements. These findings underscore the
+                distinct functional implications of these ROI selectivity profiles for processing visual scenes.</p>
+                <img src="images/wordclouds_gqa.jpg" style="width:100%">
+                <p><b>Figure. </b><small>WordCloud for top 20 categories that an ROI selects for in the GQA dataset. In this visualization, the category size
+                represents the magnitude of the median IOU.</small></p>
+                </div>
+                <br>
+                <h4>See our paper for more!</h4>
+               
+                <br>
+                <spacer type="horizontal" width="100" height="50"> </spacer>
+                <br>
+                <hr>
+                
 
                 <section id="citation">
                     <h2>Citation</h2>
@@ -1179,6 +1252,8 @@
                     </div>
                 </section>
                 <hr>
+                <br>
+                <br>
 
                 <!-- end paper container -->
 
