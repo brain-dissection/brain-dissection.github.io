@@ -665,9 +665,10 @@
                     <br>
                     <!-- <hr style="height:1px; visibility:hidden;" > -->
                     <p align="justify">The method trains a convolutional neural network tailored to predict voxel
-                    responses within a defined sub-region. By training a backbone network for this sub-region and incorporating a linear
+                    responses to natural images within a defined sub-region. By training a backbone network for this sub-region and incorporating a linear
                     readout for each voxel, the network learns to extract image features crucial for predicting each voxel
-                    (<b>Figure A below</b>).</p>
+                    (<b>Figure A below</b>). For training, we used the <a href="https://naturalscenesdataset.org/" target="_blank">Natural Scenes Dataset (NSD)</a>, which consists of high-resolution
+                    fMRI responses to naturalistic images from <a href="https://cocodataset.org/#home" target="_blank">Microsoft COCO</a>.</p>
                     <br>
                     <!-- <hr style="height:3px; visibility:hidden;" /> -->
                     <p align="justify">After training, we "dissect" the network by inputting held-out images and extracting regions that
